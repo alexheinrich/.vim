@@ -1,3 +1,12 @@
-[submodule "bundle/vim-autoclose"]
-	path = bundle/vim-autoclose
-	url = https://github.com/Townk/vim-autoclose.git
+[submodule "bundle/vim-rtags"]
+	path = bundle/vim-rtags
+	url = https://github.com/lyuts/vim-rtags.git
+[submodule "bundle/ayu-vim"]
+	path = bundle/ayu-vim
+	url = https://github.com/ayu-theme/ayu-vim.git
+[submodule "bundle/deoplete.nvim"]
+	path = bundle/deoplete.nvim
+	url = https://github.com/Shougo/deoplete.nvim.git
+[submodule "bundle/YouCompleteMe"]
+	path = bundle/YouCompleteMe
+	url = https://github.com/ycm-core/YouCompleteMe.git
