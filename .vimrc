@@ -43,8 +43,10 @@ let g:ycm_clangd_uses_ycmd_caching = 0
 let g:ycm_clangd_binary_path = exepath('clangd')
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_auto_trigger = 0
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 
 nnoremap <Leader>gd :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>gds :sp <CR>:exec("YcmCompleter GoToDefinition")<CR>
 "nnoremap <Leader>gdc :YcmCompleter GoToDeclaration<CR>
 nnoremap <Leader>gr :YcmCompleter GoToReferences<CR>
 nnoremap <Leader>gi :YcmCompleter GoToInclude<CR> 
