@@ -31,7 +31,8 @@ set tabstop=4
 set softtabstop=4
 
 set foldmethod=syntax
-" set foldnestmax=1
+" set foldnestmax=99
+set nofoldenable
 
 set autoindent
 set smartindent
@@ -43,13 +44,31 @@ let g:ycm_clangd_uses_ycmd_caching = 0
 let g:ycm_clangd_binary_path = exepath('clangd')
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_auto_trigger = 0
+let g:ycm_auto_hover = ''
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 
 nnoremap <Leader>gd :YcmCompleter GoToDefinition<CR>
-nnoremap <leader>gds :sp <CR>:exec("YcmCompleter GoToDefinition")<CR>
-"nnoremap <Leader>gdc :YcmCompleter GoToDeclaration<CR>
+nnoremap <Leader>gdc :YcmCompleter GoToDeclaration<CR>
 nnoremap <Leader>gr :YcmCompleter GoToReferences<CR>
 nnoremap <Leader>gi :YcmCompleter GoToInclude<CR> 
 nnoremap <Leader>rs :YcmCompleter RefactorRename 
+nnoremap <Leader>i <plug>YCMHover
 
+set clipboard=unnamedplus
 
+if executable("xsel")
+
+  function! PreserveClipboard()
+    call system("xsel -ib", getreg('+'))
+  endfunction
+
+  function! PreserveClipboadAndSuspend()
+    call PreserveClipboard()
+    suspend
+  endfunction
+
+  autocmd VimLeave * call PreserveClipboard()
+  nnoremap <silent> <c-z> :call PreserveClipboadAndSuspend()<cr>
+  vnoremap <silent> <c-z> :<c-u>call PreserveClipboadAndSuspend()<cr>
+
+endif

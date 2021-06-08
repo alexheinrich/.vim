@@ -4,3 +4,6 @@
 [submodule "bundle/YouCompleteMe"]
 	path = bundle/YouCompleteMe
 	url = https://github.com/ycm-core/YouCompleteMe.git
+[submodule "bundle/vim-rtags"]
+	path = bundle/vim-rtags
+	url = https://github.com/lyuts/vim-rtags
