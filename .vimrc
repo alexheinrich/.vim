@@ -38,6 +38,9 @@ set autoindent
 set smartindent
 set cindent
 
+" set default clipboard to system
+set clipboard=unnamedplus
+
 " Let clangd fully control code completion
 let g:ycm_clangd_uses_ycmd_caching = 0
 " Use installed clangd, not YCM-bundled clangd which doesn't get updates.
@@ -54,8 +57,7 @@ nnoremap <Leader>gi :YcmCompleter GoToInclude<CR>
 nnoremap <Leader>rs :YcmCompleter RefactorRename 
 nnoremap <Leader>i <plug>YCMHover
 
-set clipboard=unnamedplus
-
+" Prevent clearing of clipboard on quit and suspend
 if executable("xsel")
 
   function! PreserveClipboard()
