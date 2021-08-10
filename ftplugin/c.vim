@@ -8,4 +8,6 @@ set softtabstop=4
 
 " highlight custom types ending with _t
 syn match cType "\<[a-zA-Z_][a-zA-Z0-9_]*_[t]\>"
-
+" override cDefine to highlight only #define and #undef,
+" not the macro itself
+syn match cDefine /^\s*\zs\(%:\|#\)\s*\(define\|undef\)\>/
