@@ -17,6 +17,11 @@ set backspace=indent,eol,start
 " enable ftplugin
 filetype plugin on
 
+" enable man page plugin
+runtime ftplugin/man.vim
+set keywordprg=:Man
+let g:ft_man_open_mode = 'tab'
+
 " use spaces not tabs
 set expandtab
 
@@ -55,7 +60,8 @@ nnoremap <Leader>gdc :YcmCompleter GoToDeclaration<CR>
 nnoremap <Leader>gr :YcmCompleter GoToReferences<CR>
 nnoremap <Leader>gi :YcmCompleter GoToInclude<CR> 
 nnoremap <Leader>rs :YcmCompleter RefactorRename 
-nnoremap <Leader>i <plug>YCMHover
+nmap <Leader>w <plug>(YCMHover)
+
 
 " Prevent clearing of clipboard on quit and suspend
 if executable("xsel")
