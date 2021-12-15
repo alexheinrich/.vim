@@ -29,7 +29,7 @@ filetype plugin on
 
 " enable man page plugin
 runtime ftplugin/man.vim
-set keywordprg=:man
+set keywordprg=:Man
 let g:ft_man_open_mode = 'tab'
 
 " File explorer (netrw) settings
