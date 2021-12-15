@@ -80,3 +80,6 @@ if executable("xsel")
   vnoremap <silent> <c-z> :<c-u>call PreserveClipboadAndSuspend()<cr>
 
 endif
+
+" Color characters after col 80
+call matchadd('Debug', '\%>81v', 100)
