@@ -2,50 +2,44 @@ execute pathogen#infect()
 
 set number
 syntax on
-
+" let backspace traverse lines
+set backspace=indent,eol,start
+" use spaces not tabs
+set expandtab
+" indent by 4 spaces 
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
+set autoindent
+set smartindent
+set cindent
 " disable beeping
 set noeb vb t_vb=
+set foldmethod=syntax
+" set foldnestmax=99
+set nofoldenable
 
 " set colorscheme (options: light/dark)
 set termguicolors
 let ayucolor="light"
 colorscheme ayu
 
-" let backspace traverse lines
-set backspace=indent,eol,start
-
-" enable ftplugin
+" enable built in plugins (located in ftplugin)
 filetype plugin on
 
 " enable man page plugin
 runtime ftplugin/man.vim
-set keywordprg=:Man
+set keywordprg=:man
 let g:ft_man_open_mode = 'tab'
 
-" use spaces not tabs
-set expandtab
-
+" File explorer (netrw) settings
 " set netrw style (hit i to cycle)
 let g:netrw_liststyle = 3
 " remove netrw banner
 let g:netrw_banner = 0
 
-" indent by 4 spaces 
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
 
-set foldmethod=syntax
-" set foldnestmax=99
-set nofoldenable
-
-set autoindent
-set smartindent
-set cindent
-
-" set default clipboard to system
-set clipboard=unnamedplus
-
+" YCM Settings
 " Let clangd fully control code completion
 let g:ycm_clangd_uses_ycmd_caching = 0
 " Use installed clangd, not YCM-bundled clangd which doesn't get updates.
@@ -63,6 +57,8 @@ nnoremap <Leader>rs :YcmCompleter RefactorRename
 nmap <Leader>w <plug>(YCMHover)
 
 
+" set default clipboard to system
+set clipboard=unnamedplus
 " Prevent clearing of clipboard on quit and suspend
 if executable("xsel")
 
