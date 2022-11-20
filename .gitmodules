@@ -10,3 +10,6 @@
 [submodule "bundle/YouCompleteMe"]
 	path = bundle/YouCompleteMe
 	url = https://github.com/ycm-core/YouCompleteMe.git
+[submodule "bundle/arm-syntax-vim"]
+	path = bundle/arm-syntax-vim
+	url = https://github.com/ARM9/arm-syntax-vim.git
