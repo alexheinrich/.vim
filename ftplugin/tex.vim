@@ -1,0 +1,2 @@
+set autowriteall
+set spell
