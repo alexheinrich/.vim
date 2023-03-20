@@ -1,5 +1,3 @@
-execute pathogen#infect()
-
 set number
 syntax on
 " let backspace traverse lines
